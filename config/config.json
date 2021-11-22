@@ -1,0 +1,175 @@
+{
+    "database": {
+        "host" : "localhost",
+        "port" : "6379",
+        "catalogName": null,
+        "username": null,
+        "password": null
+    },
+    "broker": {
+        "host" : "localhost",
+        "port" : "6379",
+        "username": null,
+        "password": null
+    },
+    "customerIdRequired": false,
+    "webHooks" : {
+        "eventsTopic": "personal-finance-management-api-topic",
+        "requestOrigin" : "webhook.personal-finance-management-api.com",
+        "enableDeliveryUrlValidation": false
+    },
+    "logger": {
+        "logLevel": "info"
+    },
+    "auth": {
+        "authority": "https://dev.platform.see.asseco.com/v1/authentication",
+        "audience": "personal-finance-management",
+        "type": "mock"
+    },
+    "faultCodes" : {
+
+        "category-already-exists": {
+            "statusCode": 440,
+            "payload" :{
+                "problem": "category-already-exists",
+                "message": "Category already exists",
+                "details": "Category already exists"
+            }
+        },
+
+        "category-in-use": {
+            "statusCode": 440,
+            "payload" :{
+                "problem": "category-in-use",
+                "message": "Cannot delete category as it is in use",
+                "details": "Cannot delete category as it is in use"
+            }
+        },
+
+        "split-amount-over-transaction-amount": {
+            "statusCode": 440,
+            "payload" :{
+                "problem": "split-amount-over-transaction-amount",
+                "message": "Split amount is larger then transaction amount",
+                "details": "Split amount is larger then transaction amount"
+            }
+        },
+
+        "provided-category-does-not-exists": {
+            "statusCode": 440,
+            "payload" :{
+                "problem": "provided-category-does-not-exists",
+                "message": "Provided category does not exists",
+                "details": "Provided category does not exists"
+            }
+        },
+        "max-length": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [ 
+                    {
+                        "tag": "field-name",
+                        "error" :"max-length",
+                        "message": "Value supplied exceeds maximum allowed length"
+                    }
+                ]
+            }
+        },
+        "min-length": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [ 
+                    {
+                        "tag": "field-name",
+                        "error" :"min-length",
+                        "message": "Value supplied does not meet minimum length"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [ 
+                    {
+                        "tag": "field-name",
+                        "error" :"required",
+                        "message": "Mandatory field or parameter was not supplied"
+                    }
+                ]
+            }
+        },
+        "out-of-range": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"out-of-range",
+                        "message": "Value supplied was out of allowed range"
+                    }
+                ]
+            }
+        },
+        "invalid-format": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"invalid-format",
+                        "message": "Value supplied does not have expected format"
+                    }
+                ]
+            }
+        },
+        "unknown-enum": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"unknown-enum",
+                        "message": "Value supplied does not belong to enumeration"
+                    }
+                ]
+            }
+        },
+        "not-on-list": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"not-on-list",
+                        "message": "Value supplied does not belong to classification"
+                    }
+                ]
+            }
+        },
+        "check-digit-invalid": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"check-digit-invalid",
+                        "message": "Value supplied does not conform to check digit validation"
+                    }
+                ]
+            }
+        },
+        "combination-required": {
+            "statusCode": 400,
+            "payload": {
+                "errors": [
+                    {
+                        "tag": "field-name",
+                        "error" :"combination-required",
+                        "message": "Parameter must be used with other parameters that were not supplied"
+                    }
+                ]
+            }
+        }
+    }
+}

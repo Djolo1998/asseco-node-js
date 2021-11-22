@@ -1,0 +1,7 @@
+steps: 
+  - template: ../../azure-pipelines-steps.yml
+    parameters:
+      serviceName: "personal-finance-management/v1"
+      imageRepository: "registry.see.asseco.com/sandbox/personal-finance-management-v1"
+      dockerfilePath: "personal-finance-management/v1/Dockerfile"
+      buildContextFolder: "personal-finance-management/v1"
